@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    
+    <script src="jquery-3.6.1.min.js"></script>
+    
+</head>
+
+<body>
+    <h1>Open AI Whisper APP</h1>
+
+    <form method='POST' enctype='multipart/form-data'>
+        {{form.hidden_tag()}}
+        {{form.file()}}
+        {{form.submit()}}
+        
+    </form>
+
+    
+
+    <div>
+        {% if fileName %}
+        <p>{{fileName}} Upload!</p>
+        <!--{{btnConvert}}
+
+        <button type="submit">ConvertMP3</button>
+
+        {{src}}
+        <video src="{{src}}"></video>-->
+
+            <form action="/convert" method="post">
+            <input id="srcConvert" name="srcConvert" value="{{src}}">
+            <input id="srcFileName" name="srcFileName" value="{{fileValue}}">
+            <input type="submit" value="MP4 to MP3">
+          </form>
+
+          {% endif %}
+
+          {% if output %}
+          
+         {% endif %}
+    </div>
+
+</body>
+
+</html>
